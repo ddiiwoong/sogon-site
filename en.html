@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sogon | macOS dictation that types where your cursor was</title>
+<meta name="description" content="A macOS menu-bar app for dictation and meeting recording. Speak and the text goes back to your cursor, translate or rewrite selected text, and turn recorded meetings into minutes.">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="lang">
+    <a href="index.html">한국어</a>
+    <span aria-hidden="true">·</span>
+    <a href="en.html" aria-current="page">English</a>
+    <span aria-hidden="true">·</span>
+    <a href="guide/en/">User guide</a>
+  </nav>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="icon" src="icon.png" alt="Sogon app icon">
+    <h1>Sogon</h1>
+    <p class="tagline">Speak, and it lands at your cursor.</p>
+    <p class="sub">A macOS menu-bar app for dictation and meeting recording. It transcribes what you say, optionally cleans it up with an LLM, and puts it where your cursor was when you started.</p>
+    <div class="badges">
+      <span class="badge">v0.31.6</span>
+      <span class="badge">macOS 14+</span>
+      <span class="badge">Apple Silicon</span>
+      <span class="badge">On-device speech recognition</span>
+      <span class="badge">Signed and notarized</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Dictation</h2>
+    <p class="lead">Hold the global shortcut, speak, and let go. The text goes into the app and field you were in when you started recording.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Back to where you were</h3>
+        <p>Sogon remembers where focus was when you started and returns there right before it types. Editors like Kiro and VS Code get their input focus back, and with the Automation permission it also returns to the Chrome tab and field or the iTerm2 session, including tmux windows and panes.</p>
+      </div>
+      <div class="card">
+        <h3>Keep talking, keep the order</h3>
+        <p>You can start the next recording while the last one is still being corrected. Transcription and correction run at the same time, but text reaches your cursor in the order you spoke.</p>
+      </div>
+      <div class="card">
+        <h3>Nothing leaves your Mac by default</h3>
+        <p>MLX Audio or WhisperKit handles speech recognition on your Mac. LLM correction defaults to <code>None</code>, and a cloud provider is used only if you pick one.</p>
+      </div>
+      <div class="card">
+        <h3>Correct without speaking</h3>
+        <p>Type or paste into the <code>⌃⇧T</code> window and Sogon corrects the text and puts it at your cursor. You can also dictate into that window, fix things by hand, and then submit.</p>
+      </div>
+      <div class="card">
+        <h3>Fix the terms it keeps getting wrong</h3>
+        <p>Add a correction like <code>스텝 펑션 → Step Functions</code> to the dictionary and it's replaced right after transcription, with or without an LLM. You can import 142 Cloud/IT corrections grouped into 18 topics.</p>
+      </div>
+      <div class="card">
+        <h3>Throw it away</h3>
+        <p>Press <code>⌃⇧⌫</code> while recording or transcribing and nothing gets typed. <code>esc</code> isn't used for canceling, so other apps still receive it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Selected text and your screen</h2>
+    <p class="lead">Text that's already on screen can be translated or rewritten with one key.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Translate with <code>⌘C</code> twice</h3>
+        <p>Select text and press <code>⌘C</code> twice quickly. Korean becomes English and English becomes Korean, shown next to the original. The default engine, Apple Translation, translates on this Mac. It's off by default because it watches every <code>⌘C</code>.</p>
+      </div>
+      <div class="card">
+        <h3>The <code>⌃⇧C</code> action grid</h3>
+        <p>Correct, structure, translate, change case, send to Notes, or ask a CLI about the selected text with a single key. Rewrites are shown to you before anything is replaced.</p>
+      </div>
+      <div class="card">
+        <h3><code>⌃⇧V</code> snippets</h3>
+        <p>Save text you type over and over, such as an account number, an address, or an email signature, and insert it by name. Snippets go in exactly as saved.</p>
+      </div>
+      <div class="card">
+        <h3>Ask about your screen with <code>⌃⇧S</code></h3>
+        <p>Capture part of the screen and say your question. Sogon pastes the image and then the corrected text into your agent or chat box. This one is off by default too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Meeting recording</h2>
+    <p class="lead">Separate from dictation, a session can record for up to 3 hours. By default it records first and transcribes after the meeting.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Transcribe after the meeting</h3>
+        <p>Because the audio is kept, transcription doesn't slow your Mac down during the call. When a better model comes along, you can transcribe the same audio again.</p>
+      </div>
+      <div class="card">
+        <h3>Minutes and a verbatim transcript</h3>
+        <p>From one session you can create minutes with a summary, decisions, and action items, and a verbatim transcript with nothing summarized. Export either as <code>.txt</code> or <code>.md</code>, or send it to Apple Notes.</p>
+      </div>
+      <div class="card">
+        <h3>Your mic and system audio, separately</h3>
+        <p>Your voice and the other side of the call are recorded on different tracks. When both are captured, the transcript is labeled <code>[마이크]</code> (mic) and <code>[시스템 오디오]</code> (system audio).</p>
+      </div>
+      <div class="card">
+        <h3>Who said what</h3>
+        <p>On macOS 26 or later Sogon can separate speakers on your Mac, and with AWS Transcribe turned on it tells up to 30 people apart. You can name each speaker.</p>
+      </div>
+      <div class="card">
+        <h3>Recordings you already have</h3>
+        <p>Import up to 20 files at a time in 9 formats, including mp3, m4a, wav, mp4, and mov, and they're transcribed the same way as a meeting session.</p>
+      </div>
+      <div class="card">
+        <h3>Dictate while it records</h3>
+        <p>Press <code>⌃⇧D</code> during a session to add dictation. The meeting keeps recording and only what you dictate goes to your cursor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Install</h2>
+    <div class="note" style="margin-bottom:20px">
+      This is a public release. Download it directly — no sign-in and no extra tooling.
+    </div>
+    <p style="margin:0 0 12px">Download <code>Sogon.dmg</code> from the <a href="https://github.com/ddiiwoong/sogon-site/releases/tag/v0.31.6">v0.31.6 release</a>, open it, and move <code>Sogon.app</code> to <code>/Applications</code>. The build is signed with a Developer ID and notarized by Apple, so it opens without a Gatekeeper warning. The <a href="guide/en/">user guide</a> walks you through permissions and your first dictation.</p>
+    <p style="margin:0 0 12px">With Homebrew: <code>brew install --cask ddiiwoong/sogon/sogon</code>. Sogon updates itself after that, so you do not need <code>brew upgrade</code>.</p>
+    <table>
+      <tr><th>Item</th><th>Requirement</th></tr>
+      <tr><td>macOS</td><td>14 (Sonoma) or later</td></tr>
+      <tr><td>Chip</td><td>Apple Silicon (arm64) only</td></tr>
+      <tr><td>Permissions</td><td>Microphone · Accessibility (shortcuts and pasting) · Screen Recording (only for system audio)</td></tr>
+      <tr><td>Updates</td><td>Checked at launch. When a new version exists a window appears; one click installs it and relaunches the app.</td></tr>
+    </table>
+    <p style="color:var(--text-dim);font-size:15px;margin:20px 0 0">
+      Sogon never asks for permissions on its own. The system dialog appears only when you press a permission button in the quick controls or in Settings.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How to use it</h2>
+    <table>
+      <tr><th>To</th><th>Do this</th></tr>
+      <tr><td>Dictate</td><td>Hold <code>⌃⇧R</code>, speak, and let go</td></tr>
+      <tr><td>Correct without speaking</td><td><code>⌃⇧T</code></td></tr>
+      <tr><td>Translate a selection</td><td><code>⌘C</code> twice (after turning it on in Settings)</td></tr>
+      <tr><td>Act on a selection</td><td><code>⌃⇧C</code></td></tr>
+      <tr><td>Insert a saved phrase</td><td><code>⌃⇧V</code></td></tr>
+      <tr><td>Record a meeting</td><td>Menu bar icon → <code>Start Recording (transcribe later)</code></td></tr>
+      <tr><td>Cancel</td><td><code>⌃⇧⌫</code></td></tr>
+      <tr><td>See results</td><td>Settings → History</td></tr>
+    </table>
+    <div class="note" style="margin-top:20px">
+      During a meeting recording, <code>Stop Recording</code> in the quick controls stops the session. Press <code>⌃⇧D</code> again to stop only the dictation. You can't start a session while dictating, so start the session first.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Engines</h2>
+    <p class="lead">You can switch transcription and correction engines without restarting the app.</p>
+    <table>
+      <tr><th>Stage</th><th>Options</th></tr>
+      <tr><td>Transcription (STT)</td><td>MLX Audio (local) · WhisperKit (local, CoreML/ANE) · Groq Cloud</td></tr>
+      <tr><td>Correction and translation (LLM)</td><td>None (default) · Amazon Bedrock (Nova, Claude) · Anthropic Claude · Google Gemini · OpenAI · Groq · Local MLX</td></tr>
+      <tr><td>Correction mode</td><td>Standard · Filler Removal · Structured · Custom (prompt template)</td></tr>
+      <tr><td>Meeting speakers</td><td>On your Mac (macOS 26+) · AWS Transcribe (optional)</td></tr>
+    </table>
+    <p style="color:var(--text-dim);font-size:15px;margin:20px 0 0">
+      In Standard and Filler Removal modes, if a correction changes more than half the words, Sogon inserts the original instead. That keeps the model from summarizing your dictation or turning it into something else.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;width:100%">
+    <span>Sogon v0.31.6 · macOS 14+ · Apple Silicon</span>
+    <span>
+      <a href="guide/en/">User guide</a> ·
+      <a href="https://github.com/ddiiwoong/sogon-site">Repository</a> ·
+      <a href="https://github.com/ddiiwoong/sogon-site/releases">Releases</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

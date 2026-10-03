@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Sogon Sparkle 업데이트 피드.
+
+  손으로 고치지 않는다 — scripts/make-appcast.py 가 만들고 릴리스 절차가 부른다.
+  enclosure 의 sparkle:edSignature 는 keychain 의 비밀키로 만든 것이고, 앱은
+  Info.plist 의 SUPublicEDKey 로 검증한다. 한 글자라도 다르면 설치되지 않는다.
+
+  게시: scripts/publish-appcast.sh (sogon-site gh-pages 루트 → https://sogon.dev/appcast.xml)
+-->
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Sogon(소곤)</title>
+    <link>https://sogon.dev/appcast.xml</link>
+    <description>Sogon 업데이트 피드</description>
+    <language>ko</language>
+    <item>
+      <title>0.31.6</title>
+      <pubDate>Sat, 03 Oct 2026 22:24:01 +0900</pubDate>
+      <sparkle:version>65</sparkle:version>
+      <sparkle:shortVersionString>0.31.6</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://github.com/ddiiwoong/sogon-site/releases/tag/v0.31.6</sparkle:releaseNotesLink>
+      <enclosure url="https://github.com/ddiiwoong/sogon-site/releases/download/v0.31.6/Sogon.dmg"
+                 length="25377057"
+                 type="application/octet-stream"
+                 sparkle:edSignature="qaFCuiNGvfSRxgjVzwCPebVw4G3n+Aj5GKllK1h+5IWpPa3klYJHUTOOjTj3ODZg7orsfyH/c+le1ySFP6/FAg==" />
+    </item>
+  </channel>
+</rss>
