@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunksogon_docs||=[]).push([[647],{7121(s,e,r){r.r(e),r.d(e,{default:()=>d});r(6540);var a=r(4164),c=r(7559),o=r(5500),u=r(2831),n=r(4060),t=r(4848);function d(s){return(0,t.jsx)(o.e3,{className:(0,a.A)(c.G.wrapper.docsPages),children:(0,t.jsx)(n.A,{children:(0,u.v)(s.route.routes)})})}}}]);
