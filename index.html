@@ -192,6 +192,27 @@
 
 <section>
   <div class="wrap">
+    <h2>구성</h2>
+    <p class="lead">앱이 어떻게 짜였는지를 흐름도로 공개합니다. 층과 호출 방향, 상태가 어디 한 곳에 모이는지, 어느 지점이 프로토콜로 교체 가능한지를 봅니다.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>무엇을 담나</h3>
+        <p>상태는 <code>AppState</code> 한 곳에 모으고 모든 표면이 관찰한다 · 파이프라인 순서는 <code>RecordingCoordinator</code>만 안다 · 교체 가능한 지점은 프로토콜로 둔다. 격리 규칙과 순수 모델이 담는 것도 함께 적었습니다.</p>
+      </div>
+      <div class="card">
+        <h3>앱 소스는 공개하지 않습니다</h3>
+        <p>흐름도는 구조와 규칙을 담고 소스 코드는 담지 않습니다. 쓰는 데 필요한 내용은 <a href="guide/">사용 설명서</a>에 있고, 이 문서는 "안에서 무슨 일이 일어나는지"가 궁금할 때 봅니다.</p>
+      </div>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" href="architecture.html">구성 흐름도 보기</a>
+      <a class="btn" href="guide/">사용 설명서</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <h2>문의</h2>
     <p class="lead">버그, 안 되는 것, 있으면 좋겠는 것을 GitHub 이슈로 받습니다. 계정만 있으면 되고 따로 가입할 것은 없습니다.</p>
     <div class="grid">

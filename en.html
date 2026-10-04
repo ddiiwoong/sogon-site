@@ -192,6 +192,27 @@
 
 <section>
   <div class="wrap">
+    <h2>Architecture</h2>
+    <p class="lead">How the app is put together, published as a diagram: the layers and the direction calls flow, where state is gathered, and which seams are protocols you can swap.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>What it covers</h3>
+        <p>State lives in <code>AppState</code> alone and every surface observes it · <code>RecordingCoordinator</code> orchestrates the pipeline · whatever is swappable is a protocol. The isolation rules and what the pure models hold are written down alongside.</p>
+      </div>
+      <div class="card">
+        <h3>The app's source is not public</h3>
+        <p>The diagram carries structure and rules, not source code. What you need in order to use Sogon is in the <a href="guide/en/">guide</a>; this document is for when you want to know what happens inside.</p>
+      </div>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" href="architecture-en.html">Open the architecture diagram</a>
+      <a class="btn" href="guide/en/">Guide</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
     <h2>Support</h2>
     <p class="lead">Bugs, things that don't work, and things you wish existed go in GitHub issues. A GitHub account is all you need; there is nothing else to sign up for.</p>
     <div class="grid">
