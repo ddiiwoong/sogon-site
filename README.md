@@ -21,6 +21,7 @@
 말하면 전사하고, 원하면 LLM으로 다듬어 녹음을 시작할 때 커서가 있던 자리에 넣습니다.
 
 ➡️ **[sogon.dev](https://sogon.dev/)** · [사용 설명서](https://sogon.dev/guide/) ·
+[구성 흐름도](https://sogon.dev/architecture.html) ·
 [문제 해결](https://sogon.dev/guide/docs/troubleshooting/) ·
 [문의하기](https://github.com/ddiiwoong/sogon-site/issues/new/choose)
 
@@ -51,11 +52,19 @@ Homebrew를 쓰지 않으면 [최신 릴리스](https://github.com/ddiiwoong/sog
 | Releases | `Sogon.dmg` — 서명·공증된 빌드 |
 | `appcast.xml` | 인앱 업데이트 피드 (Sparkle) |
 | `index.html` · `en.html` · `style.css` | 랜딩 페이지 |
+| `architecture.html` · `architecture-en.html` | 구성 흐름도 — 층과 호출 방향 |
 | `guide/` | 사용 설명서 (Docusaurus 빌드 산출물) |
 | `.github/ISSUE_TEMPLATE/` | 이슈 양식 |
 | Issues | 버그·질문·기능 제안 |
 
 기본 브랜치가 `gh-pages`라서 저장소 첫 화면에 웹사이트 파일이 보입니다. 소스 트리가 아닙니다.
+
+## 구성
+
+앱 소스는 공개하지 않지만 **구조는 공개합니다.**
+[구성 흐름도](https://sogon.dev/architecture.html)([en](https://sogon.dev/architecture-en.html))가
+층과 호출 방향, 상태를 한 곳에 모으는 규칙, 프로토콜로 교체 가능한 지점을 담습니다. 소스 코드는
+담지 않습니다.
 
 ## 문의
 
@@ -74,6 +83,7 @@ Hold a global shortcut, speak, and it transcribes — optionally cleaning the te
 then inserts it where your cursor was when you started.
 
 ➡️ **[sogon.dev/en.html](https://sogon.dev/en.html)** · [Guide](https://sogon.dev/guide/en/) ·
+[Architecture](https://sogon.dev/architecture-en.html) ·
 [Troubleshooting](https://sogon.dev/guide/en/docs/troubleshooting/) ·
 [Open an issue](https://github.com/ddiiwoong/sogon-site/issues/new/choose)
 
@@ -88,3 +98,6 @@ Silicon. Sogon updates itself, so `brew upgrade` is not required.
 
 This repository hosts the distribution artifacts and the website — **not the app's source code.**
 Its default branch is `gh-pages`, which is why you see website files here rather than a source tree.
+The source stays closed, but the structure does not: the
+[architecture diagram](https://sogon.dev/architecture-en.html) covers the layers and the direction
+calls flow, the rule that gathers state in one place, and which seams are swappable protocols.
