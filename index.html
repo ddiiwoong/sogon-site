@@ -17,6 +17,8 @@
     <a href="en.html">English</a>
     <span aria-hidden="true">·</span>
     <a href="guide/">사용 설명서</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://github.com/ddiiwoong/sogon-site/issues">문의</a>
   </nav>
 </div>
 
@@ -30,6 +32,10 @@
       <span class="badge">v0.31.6</span>
       <span class="badge">macOS 14+</span>
       <span class="badge">Apple Silicon</span>
+    </div>
+    <div class="hero-install">
+      <code class="cmd">brew install --cask ddiiwoong/tap/sogon</code>
+      <p class="hero-install-alt">Homebrew를 쓰지 않으면 <a href="https://github.com/ddiiwoong/sogon-site/releases">최신 릴리스</a>에서 <code>Sogon.dmg</code>를 받습니다. 공개 릴리스라 로그인이 필요하지 않습니다.</p>
     </div>
   </div>
 </header>
@@ -178,11 +184,36 @@
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <h2>문의</h2>
+    <p class="lead">버그, 안 되는 것, 있으면 좋겠는 것을 GitHub 이슈로 받습니다. 계정만 있으면 되고 따로 가입할 것은 없습니다.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>무엇을 적으면 되나</h3>
+        <p>쓰는 macOS 판과 Sogon 판(설정 맨 아래에 있습니다), 어떻게 하면 그렇게 되는지, 기대한 결과와 실제 결과. 받아쓴 글이나 회의 내용은 넣지 않아도 됩니다.</p>
+      </div>
+      <div class="card">
+        <h3>진단 정보</h3>
+        <p>재현되는 문제라면 진단 파일을 붙이면 훨씬 빠릅니다. 설정 → 일반 → 진단에서 <code>디버그 로그 기록</code>을 켜고 한 번 재현한 뒤 내보냅니다. 받아쓴 글·번역문은 담기지 않습니다. 순서는 <a href="guide/docs/troubleshooting/diagnostics/">진단 정보 보내기</a>에 있습니다.</p>
+      </div>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/ddiiwoong/sogon-site/issues/new">문의 남기기</a>
+      <a class="btn" href="https://github.com/ddiiwoong/sogon-site/issues">올라온 문의 보기</a>
+    </div>
+    <p style="color:var(--text-dim);font-size:15px;margin:20px 0 0">
+      이슈는 공개로 보입니다. 공개하기 어려운 내용은 적지 마세요. 먼저 <a href="guide/docs/troubleshooting/">문제 해결</a>을 보면 자주 묻는 증상은 거기서 끝납니다.
+    </p>
+  </div>
+</section>
+
 <footer>
   <div class="wrap" style="display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;width:100%">
     <span>Sogon v0.31.6 · macOS 14+ · Apple Silicon</span>
     <span>
       <a href="guide/">사용 설명서</a> ·
+      <a href="https://github.com/ddiiwoong/sogon-site/issues">문의</a> ·
       <a href="https://github.com/ddiiwoong/sogon-site">저장소</a> ·
       <a href="https://github.com/ddiiwoong/sogon-site/releases">릴리스</a>
     </span>

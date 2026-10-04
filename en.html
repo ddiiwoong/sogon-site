@@ -17,6 +17,8 @@
     <a href="en.html" aria-current="page">English</a>
     <span aria-hidden="true">·</span>
     <a href="guide/en/">User guide</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://github.com/ddiiwoong/sogon-site/issues">Support</a>
   </nav>
 </div>
 
@@ -30,6 +32,10 @@
       <span class="badge">v0.31.6</span>
       <span class="badge">macOS 14+</span>
       <span class="badge">Apple Silicon</span>
+    </div>
+    <div class="hero-install">
+      <code class="cmd">brew install --cask ddiiwoong/tap/sogon</code>
+      <p class="hero-install-alt">Not using Homebrew? Grab <code>Sogon.dmg</code> from the <a href="https://github.com/ddiiwoong/sogon-site/releases">latest release</a>. It is a public release, so there is no sign-in.</p>
     </div>
   </div>
 </header>
@@ -178,11 +184,36 @@
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <h2>Support</h2>
+    <p class="lead">Bugs, things that don't work, and things you wish existed go in GitHub issues. A GitHub account is all you need; there is nothing else to sign up for.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>What to include</h3>
+        <p>Your macOS version and Sogon version (at the bottom of Settings), how to get there, and what you expected versus what happened. You do not need to include any dictated text or meeting content.</p>
+      </div>
+      <div class="card">
+        <h3>Diagnostics</h3>
+        <p>For anything reproducible, attaching a diagnostics file is much faster. Turn on <code>Record debug log</code> in Settings → General → Diagnostics, reproduce it once, then export. Dictated and translated text is never in it. The steps are in <a href="guide/en/docs/troubleshooting/diagnostics/">Sending diagnostics</a>.</p>
+      </div>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/ddiiwoong/sogon-site/issues/new">Open an issue</a>
+      <a class="btn" href="https://github.com/ddiiwoong/sogon-site/issues">Browse open issues</a>
+    </div>
+    <p style="color:var(--text-dim);font-size:15px;margin:20px 0 0">
+      Issues are public, so leave out anything you cannot share. <a href="guide/en/docs/troubleshooting/">Troubleshooting</a> covers the common symptoms first.
+    </p>
+  </div>
+</section>
+
 <footer>
   <div class="wrap" style="display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;width:100%">
     <span>Sogon v0.31.6 · macOS 14+ · Apple Silicon</span>
     <span>
       <a href="guide/en/">User guide</a> ·
+      <a href="https://github.com/ddiiwoong/sogon-site/issues">Support</a> ·
       <a href="https://github.com/ddiiwoong/sogon-site">Repository</a> ·
       <a href="https://github.com/ddiiwoong/sogon-site/releases">Releases</a>
     </span>
