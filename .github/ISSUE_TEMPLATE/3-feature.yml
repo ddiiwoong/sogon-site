@@ -1,0 +1,35 @@
+name: 기능 제안 / Feature request
+description: 있으면 좋을 동작을 제안합니다 / Suggest a change or an addition
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **이 이슈는 누구나 볼 수 있습니다.**
+
+        _This tracker is public._
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 어떤 상황에서 불편한가요
+      description: 바라는 기능보다 **막히는 상황**을 먼저 적어 주세요. 같은 불편을 다른 방법으로 풀 수 있는 경우가 많습니다.
+      placeholder: 회의 녹음을 끝낸 뒤 산출물을 찾으려면 설정 창을 열어야 합니다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 바라는 동작
+      description: 떠오르는 모양이 있으면 적습니다. 없으면 비워 두세요.
+    validations:
+      required: false
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: 지금은 어떻게 하고 있나요
+      description: 우회 방법이 있다면 적어 주세요. 급한지 가늠하는 데 씁니다.
+    validations:
+      required: false

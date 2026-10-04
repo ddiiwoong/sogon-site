@@ -1,0 +1,14 @@
+# 빈 이슈를 끄면 `/issues/new`가 템플릿 고르는 화면으로 넘어간다 — 랜딩과 설명서의 `문의` 버튼이
+# 그 주소를 가리키므로, 이 값이 `true`가 되면 버튼을 누른 사람이 템플릿 없는 빈 양식을 받는다.
+# 쓰기 권한이 있는 본인에게는 `Blank issue (Maintainers only)`가 계속 보인다.
+blank_issues_enabled: false
+contact_links:
+  - name: 설명서 / Guide
+    url: https://sogon.dev/guide/
+    about: 설치·단축키·설정·회의 기록은 설명서에 있습니다.
+  - name: 문제 해결 / Troubleshooting
+    url: https://sogon.dev/guide/docs/troubleshooting/
+    about: 증상별로 먼저 확인할 것이 정리돼 있습니다. 버그를 알리기 전에 여기를 보세요.
+  - name: 진단 정보 만들기 / Diagnostics
+    url: https://sogon.dev/guide/docs/troubleshooting/diagnostics/
+    about: 디버그 로그를 켜고 재현한 뒤 진단 파일 하나로 묶는 방법입니다.

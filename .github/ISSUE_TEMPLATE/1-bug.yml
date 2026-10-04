@@ -1,0 +1,105 @@
+name: 버그 신고 / Bug report
+description: 동작이 설명과 다르거나 오류가 납니다 / Something does not work as documented
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **이 이슈는 누구나 볼 수 있습니다.** 받아쓴 글, 회의 내용, API 키처럼 공개하기 어려운 것은 넣지 마세요 — 증상만 적어도 충분합니다.
+
+        _This tracker is public. Do not paste transcripts, meeting content, or API keys._
+
+  - type: checkboxes
+    id: checked-docs
+    attributes:
+      label: 먼저 확인한 것
+      options:
+        - label: "[문제 해결](https://sogon.dev/guide/docs/troubleshooting/) 문서에서 같은 증상을 찾아봤습니다"
+          required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 무슨 일이 생겼나요
+      description: 실제로 일어난 일을 적습니다.
+      placeholder: 단축키를 눌렀는데 Voice Bar가 뜨지 않고 아무 일도 일어나지 않습니다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대한 결과
+      description: 무엇이 일어나야 했는지 적습니다.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 어떻게 하면 그렇게 되나요
+      description: 한 번만 있었던 일이면 그렇다고 적어 주세요. 재현 절차를 모르는 것은 알리지 않을 이유가 되지 않습니다.
+      placeholder: |
+        1. Chrome 주소창을 클릭한다
+        2. 단축키를 누른다
+        3. 말하고 단축키를 다시 누른다
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 어느 기능인가요
+      options:
+        - 단축키가 반응하지 않는다
+        - 녹음은 되는데 글이 들어가지 않는다
+        - 글이 엉뚱한 곳에 들어간다
+        - 교정(LLM)이 되지 않는다
+        - 번역 창
+        - 회의 전사·기록
+        - 설치·업데이트
+        - 설정 화면
+        - 그 밖에 / 모르겠다
+    validations:
+      required: true
+
+  - type: input
+    id: sogon-version
+    attributes:
+      label: Sogon 판
+      description: 설정 창 맨 아래에 있습니다.
+      placeholder: "0.31.6"
+    validations:
+      required: true
+
+  - type: input
+    id: macos-version
+    attributes:
+      label: macOS 판
+      description: 애플 메뉴 → 이 Mac에 관하여
+      placeholder: 15.1 (Apple Silicon)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install-method
+    attributes:
+      label: 어떻게 설치했나요
+      description: 설치 경로에 따라 업데이트가 닿는 길이 다릅니다.
+      options:
+        - Homebrew (brew install --cask ddiiwoong/tap/sogon)
+        - DMG를 직접 받아서
+        - 모르겠다
+    validations:
+      required: false
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: 진단 정보
+      description: |
+        [진단 정보 보내기](https://sogon.dev/guide/docs/troubleshooting/diagnostics/)를 따라 만든 `Sogon-진단-*.txt`를 이 칸에 끌어다 놓습니다. 받아쓴 글과 번역문은 담기지 않고, 키가 섞이면 가려집니다.
+
+        **로그를 켜기 전에 일어난 일은 남지 않습니다** — 설정 → 일반 → 진단에서 `디버그 로그 기록`을 켜고 한 번 더 재현한 뒤 내보냅니다.
+    validations:
+      required: false

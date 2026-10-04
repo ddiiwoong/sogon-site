@@ -1,0 +1,36 @@
+name: 질문 / Question
+description: 쓰는 방법을 묻거나, 설명서에 없는 것을 확인합니다 / Ask how something works
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **이 이슈는 누구나 볼 수 있습니다.** 받아쓴 글이나 회의 내용은 넣지 마세요.
+
+        _This tracker is public. Do not paste transcripts or meeting content._
+
+  - type: textarea
+    id: question
+    attributes:
+      label: 묻고 싶은 것
+      description: 하려던 일과 막힌 자리를 적으면 더 빨리 답할 수 있습니다.
+    validations:
+      required: true
+
+  - type: input
+    id: sogon-version
+    attributes:
+      label: Sogon 판
+      description: 설정 창 맨 아래에 있습니다. 모르면 비워 두세요.
+      placeholder: "0.31.6"
+    validations:
+      required: false
+
+  - type: input
+    id: doc-page
+    attributes:
+      label: 본 설명서 페이지
+      description: 설명서를 보다 막혔으면 그 주소를 적어 주세요. 문서를 고칠 자리가 됩니다.
+      placeholder: https://sogon.dev/guide/docs/troubleshooting/
+    validations:
+      required: false
