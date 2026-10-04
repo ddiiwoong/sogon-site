@@ -15,6 +15,18 @@
     <description>Sogon 업데이트 피드</description>
     <language>ko</language>
     <item>
+      <title>0.32.0</title>
+      <pubDate>Sun, 04 Oct 2026 19:26:38 +0900</pubDate>
+      <sparkle:version>66</sparkle:version>
+      <sparkle:shortVersionString>0.32.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://github.com/ddiiwoong/sogon-site/releases/tag/v0.32.0</sparkle:releaseNotesLink>
+      <enclosure url="https://github.com/ddiiwoong/sogon-site/releases/download/v0.32.0/Sogon.dmg"
+                 length="25573895"
+                 type="application/octet-stream"
+                 sparkle:edSignature="WFL7VwLHqVPGf4DOQitCPm45xDXItOmAeYTYHweH7FqI2aaYX7ImvQFypgAZGTOX3xafEDQcGZF/kb0hj11JAw==" />
+    </item>
+    <item>
       <title>0.31.6</title>
       <pubDate>Sat, 03 Oct 2026 22:24:01 +0900</pubDate>
       <sparkle:version>65</sparkle:version>
