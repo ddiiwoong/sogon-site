@@ -34,7 +34,11 @@
       <span class="badge">Apple Silicon</span>
     </div>
     <div class="hero-install">
-      <code class="cmd">brew install --cask ddiiwoong/tap/sogon</code>
+      <div class="cmd-row">
+        <code class="cmd" id="install-cmd">brew install --cask ddiiwoong/tap/sogon</code>
+        <button class="copy-btn" type="button" data-copy="install-cmd"
+                data-copied="복사됨" data-failed="⌘C로 복사" aria-live="polite" hidden>복사</button>
+      </div>
       <p class="hero-install-alt">Homebrew를 쓰지 않으면 <a href="https://github.com/ddiiwoong/sogon-site/releases">최신 릴리스</a>에서 <code>Sogon.dmg</code>를 받습니다. 공개 릴리스라 로그인이 필요하지 않습니다.</p>
     </div>
   </div>
@@ -219,6 +223,79 @@
     </span>
   </div>
 </footer>
+
+<!-- 복사 버튼 — 외부 의존이 없는 인라인 스크립트.
+     파일로 빼지 않는다: `SITE_FILES`(= 게시 목록)를 늘리면 공개 여부를 사람이 판단해야 하고,
+     `<script src>`는 링크 검사의 해석 대상이 된다. 프레임워크·CDN을 쓰지 않으므로 `style.css`
+     머리말의 "외부 의존이 없다"는 그대로 유지된다.
+
+     순서가 중요하다 — 버튼은 HTML에서 `hidden`이고 이 스크립트가 켠다. JS가 없거나 이 블록이
+     실패하면 버튼이 **보이지 않고**, 명령은 `user-select: all`로 여전히 한 번에 선택된다.
+     `navigator.clipboard`는 보안 컨텍스트에서만 동작하므로(`file://`에서는 거부된다)
+     거부를 받으면 `execCommand`로, 그것도 실패하면 명령을 선택해 ⌘C를 안내한다. -->
+<script>
+(function () {
+  "use strict";
+
+  function copyViaTextarea(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.top = "-1000px";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  function selectNode(node) {
+    var sel = window.getSelection ? window.getSelection() : null;
+    if (!sel || !document.createRange) { return; }
+    var range = document.createRange();
+    range.selectNodeContents(node);
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+
+  function wire(btn) {
+    var target = document.getElementById(btn.getAttribute("data-copy"));
+    if (!target) { return; }  // 대상이 없으면 버튼을 켜지 않는다
+
+    var idle = btn.textContent;
+    var copied = btn.getAttribute("data-copied") || idle;
+    var failed = btn.getAttribute("data-failed") || idle;
+    var timer = null;
+
+    function finish(ok) {
+      btn.textContent = ok ? copied : failed;
+      if (!ok) { selectNode(target); }
+      if (timer) { clearTimeout(timer); }
+      timer = setTimeout(function () { btn.textContent = idle; }, 2000);
+    }
+
+    btn.addEventListener("click", function () {
+      var text = target.textContent.trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { finish(true); },
+          function () { finish(copyViaTextarea(text)); }
+        );
+      } else {
+        finish(copyViaTextarea(text));
+      }
+    });
+
+    btn.hidden = false;
+  }
+
+  var buttons = document.querySelectorAll("button.copy-btn[data-copy]");
+  for (var i = 0; i < buttons.length; i++) { wire(buttons[i]); }
+})();
+</script>
 
 </body>
 </html>

@@ -34,7 +34,11 @@
       <span class="badge">Apple Silicon</span>
     </div>
     <div class="hero-install">
-      <code class="cmd">brew install --cask ddiiwoong/tap/sogon</code>
+      <div class="cmd-row">
+        <code class="cmd" id="install-cmd">brew install --cask ddiiwoong/tap/sogon</code>
+        <button class="copy-btn" type="button" data-copy="install-cmd"
+                data-copied="Copied" data-failed="Press ⌘C" aria-live="polite" hidden>Copy</button>
+      </div>
       <p class="hero-install-alt">Not using Homebrew? Grab <code>Sogon.dmg</code> from the <a href="https://github.com/ddiiwoong/sogon-site/releases">latest release</a>. It is a public release, so there is no sign-in.</p>
     </div>
   </div>
@@ -219,6 +223,73 @@
     </span>
   </div>
 </footer>
+
+<!-- 복사 버튼 — 근거와 함정은 `site/index.html`의 같은 블록 머리말에 적어 두었다.
+     코드는 한국어판과 글자 단위로 같다. 라벨은 버튼의 `data-*`에서 읽으므로 번역이 끼어들
+     자리가 없다 — 두 판이 갈라지면 한쪽만 고치는 일이 생긴다. -->
+<script>
+(function () {
+  "use strict";
+
+  function copyViaTextarea(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.top = "-1000px";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  function selectNode(node) {
+    var sel = window.getSelection ? window.getSelection() : null;
+    if (!sel || !document.createRange) { return; }
+    var range = document.createRange();
+    range.selectNodeContents(node);
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+
+  function wire(btn) {
+    var target = document.getElementById(btn.getAttribute("data-copy"));
+    if (!target) { return; }  // 대상이 없으면 버튼을 켜지 않는다
+
+    var idle = btn.textContent;
+    var copied = btn.getAttribute("data-copied") || idle;
+    var failed = btn.getAttribute("data-failed") || idle;
+    var timer = null;
+
+    function finish(ok) {
+      btn.textContent = ok ? copied : failed;
+      if (!ok) { selectNode(target); }
+      if (timer) { clearTimeout(timer); }
+      timer = setTimeout(function () { btn.textContent = idle; }, 2000);
+    }
+
+    btn.addEventListener("click", function () {
+      var text = target.textContent.trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { finish(true); },
+          function () { finish(copyViaTextarea(text)); }
+        );
+      } else {
+        finish(copyViaTextarea(text));
+      }
+    });
+
+    btn.hidden = false;
+  }
+
+  var buttons = document.querySelectorAll("button.copy-btn[data-copy]");
+  for (var i = 0; i < buttons.length; i++) { wire(buttons[i]); }
+})();
+</script>
 
 </body>
 </html>
