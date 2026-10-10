@@ -15,6 +15,82 @@
     <description>Sogon 업데이트 피드</description>
     <language>ko</language>
     <item>
+      <title>0.33.0</title>
+      <pubDate>Sat, 10 Oct 2026 17:50:41 +0900</pubDate>
+      <sparkle:version>68</sparkle:version>
+      <sparkle:shortVersionString>0.33.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <sparkle:fullReleaseNotesLink>https://github.com/ddiiwoong/sogon-site/releases/tag/v0.33.0</sparkle:fullReleaseNotesLink>
+      <description><![CDATA[
+<style>
+body { margin: 0; padding: 0; line-height: 1.55; }
+h1, h2, h3 { line-height: 1.3; margin: 1.1em 0 0.45em; }
+h1 { font-size: 1.35em; }
+h2 { font-size: 1.15em; }
+h3 { font-size: 1.02em; }
+h2:first-child, h3:first-child, p:first-child { margin-top: 0; }
+p { margin: 0.55em 0; }
+ul { margin: 0.5em 0; padding-left: 1.3em; }
+li { margin: 0.25em 0; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: 0.92em; padding: 0.1em 0.3em; border-radius: 3px; }
+pre { font-family: ui-monospace, Menlo, monospace; font-size: 0.92em; padding: 0.6em 0.8em; border-radius: 4px; overflow-x: auto; }
+pre code { padding: 0; background: none; }
+blockquote { margin: 0.6em 0; padding: 0.1em 0 0.1em 0.8em; border-left: 3px solid currentColor; }
+table { border-collapse: collapse; margin: 0.7em 0; width: 100%; }
+th, td { text-align: left; padding: 0.35em 0.6em; border-bottom: 1px solid currentColor; vertical-align: top; }
+th { font-weight: 600; }
+hr { border: 0; border-top: 1px solid currentColor; margin: 1.2em 0; }
+code, pre { background: rgba(127, 127, 127, 0.18); }
+@media (prefers-color-scheme: dark) {
+  html { color-scheme: dark; color: #ffffff; }
+  a { color: #419CFF; }
+}
+@supports (color: color-mix(in srgb, currentColor 20%, transparent)) {
+  th, td, hr { border-color: color-mix(in srgb, currentColor 22%, transparent); }
+  blockquote { border-left-color: color-mix(in srgb, currentColor 35%, transparent); }
+}
+</style>
+<h2>다시 전사할 때 설정을 그 한 번만 바꿉니다</h2>
+<p>기록 탭의 <code>다시 전사</code>를 누르면 창이 하나 뜹니다. 엔진 · 모델 · 언어 · 무음 컷을 <strong>이 회차에만</strong> 적용하고 전역 설정은 건드리지 않습니다.</p>
+<p>전에는 다른 모델로 비교해 보려면 설정 창에 가서 바꾸고, 누르고, <strong>다시 되돌려야</strong> 했습니다. 되돌리는 것을 잊으면 그 뒤의 모든 받아쓰기가 바뀐 모델로 돌았습니다.</p>
+<ul><li><strong>아무것도 바꾸지 않고 시작하면</strong> 지금까지와 똑같이 현재 설정으로 돕니다.</li><li>모델 목록에 <strong>이미 내려받은 것</strong>이 표시됩니다. 아직 없는 모델을 고르면 용량과 첫 회 변환 시간을 <strong>누르기 전에</strong> 알려 줍니다 — 몇 분 기다린 뒤에 알게 되는 일을 없앱니다.</li><li>시트에서 <strong>엔진이나 모델을 바꾼 회차</strong> 동안에는 받아쓰기도 그 모델을 씁니다. 전사가 끝나면 전역 설정으로 돌아가며, 그 사이 몇 초 동안 모델을 다시 올립니다.</li></ul>
+<h2>어느 결과가 어느 설정이었는지 목록에서 보입니다</h2>
+<p>기록 목록의 각 행에 전사 설정 배지가 붙습니다 — <code>Large v3 · 한국어</code>. 마우스를 올리면 엔진·모델 전체 이름이 나옵니다.</p>
+<p>이 값은 <strong>처음부터 세션 로그에 기록되고 있었지만 꺼내 보는 곳이 없었습니다.</strong> 그래서 같은 오디오를 두 설정으로 전사하면 어느 쪽이 어느 설정이었는지 기억에 의존해야 했습니다. 지난 기록에도 바로 보입니다 — 다시 전사할 필요 없습니다.</p>
+<h2>연산 장치를 고를 수 있습니다 (설정 → STT)</h2>
+<p><code>Neural Engine (기본)</code> · <code>GPU</code> · <code>CPU</code> 중에서 고릅니다. 기본값은 지금까지와 같으므로 <strong>고르지 않으면 동작이 달라지지 않습니다.</strong></p>
+<p>Neural Engine은 모델을 처음 쓸 때 전용 프로그램으로 한 번 변환하는데, 메모리가 모자라면 그 단계에서 실패합니다. 그때 <code>GPU</code>나 <code>CPU</code>로 옮기면 그 변환 없이 같은 모델을 그대로 씁니다.</p>
+<p>실측 한 예입니다 — Apple M6 Mac, <code>Large v3</code>, 145초 오디오를 설정마다 한 회차씩:</p>
+<table>
+<thead><tr><th>연산 장치</th><th>소요</th><th>실시간 대비</th></tr></thead>
+<tbody>
+<tr><td>Neural Engine</td><td>29초</td><td>5.0배</td></tr>
+<tr><td>GPU</td><td>37초</td><td>4.0배</td></tr>
+<tr><td>CPU</td><td>97초</td><td>1.5배</td></tr>
+</tbody></table>
+<p>기계와 모델에 따라 달라집니다. 바꾸면 모델을 다시 올리므로 상태 표시가 <code>준비됨</code>이 될 때까지 기다린 뒤 쓰세요.</p>
+<h2>모델 목록이 공급자 저장소를 함께 봅니다</h2>
+<p>다시 전사 시트의 모델 목록에 앱에 내장된 것 <strong>밖의 변형</strong>도 나옵니다. 압축판, 영어 전용판, <code>distil</code> 계열처럼 설정 탭에서는 고를 수 없던 것들입니다.</p>
+<p>그리고 고른 모델이 <strong>공급자 쪽에서 다시 만들어졌으면</strong> 그 사실을 알려 줍니다. 전에는 같은 이름의 모델이 상류에서 갱신돼도 앱이 영원히 옛 파일을 썼고, 알 방법이 없었습니다.</p>
+<ul><li>내장 목록은 <strong>그대로 남습니다</strong> — 네트워크가 안 되거나 목록을 받지 못해도 선택이 줄지 않습니다.</li><li>낡았는지 <strong>판정할 수 없을 때는 아무것도 보여 주지 않습니다.</strong> 모른다는 것을 "최신"이나 "낡음"으로 꾸미지 않습니다.</li></ul>
+<h2>고친 것</h2>
+<p><strong>모델 크기 표기 넷이 틀렸습니다.</strong> <code>Tiny</code>·<code>Base</code>·<code>Small</code>은 실제보다 <strong>두 배 크게</strong>, <code>Large v3 Turbo</code>는 <strong>두 배 작게</strong>(<code>~1.6GB</code>라고 적혀 있었지만 실제 <strong>3.2GB</strong>) 적혀 있었습니다. 작은 모델을 고르려던 분이 가장 큰 것을 내려받을 수 있는 자리였습니다. 여덟 변형 전부를 다시 재서 고쳤습니다. 같은 틀린 숫자가 설명서 여섯 곳에도 있었고 함께 고쳤습니다 — 첫 다운로드 용량 안내가 특히 그랬습니다.</p>
+<table>
+<thead><tr><th>모델</th><th>전</th><th>실제</th></tr></thead>
+<tbody>
+<tr><td>Tiny · Base · Small</td><td>~150MB · ~290MB · ~970MB</td><td><strong>77MB · 147MB · 486MB</strong></td></tr>
+<tr><td>Large v3 Turbo</td><td>~1.6GB</td><td><strong>3.2GB</strong></td></tr>
+</tbody></table>
+<p><strong>모델 로드가 실패해도 메뉴 바에 <code>모델 준비중</code>으로만 보였습니다.</strong> 오류와 그 사유를 버리고 있어서, 실패가 "아직 로딩 중"과 똑같이 보였고 기다려도 끝나지 않았습니다. 이제 <code>오류</code>로 표시하고 사유를 알려 줍니다. 교정 쪽이 문제인지 음성 인식 쪽이 문제인지도 구분해 보여 줍니다.</p>
+<p><strong>다시 전사가 왜 기다리는지 행에서 보입니다.</strong> 전에는 <code>다시 전사 준비 중...</code>이라고만 하고, 실제로 무엇을 기다리는지(모델을 받는 중인지, 올리는 중인지)는 다른 탭에만 있었습니다. 이제 그 행이 <code>모델 내려받는 중 43%</code> · <code>모델 로딩 중</code> · <code>모델 오류</code>를 그대로 말합니다.</p>
+<p><strong>진단 로그가 회차마다 모델·언어·무음 컷·연산 장치 설정을 적습니다.</strong> 같은 오디오를 설정만 바꿔 두 번 돌렸을 때 어느 줄이 어느 회차인지 구별됩니다.</p>
+]]></description>
+      <enclosure url="https://github.com/ddiiwoong/sogon-site/releases/download/v0.33.0/Sogon.dmg"
+                 length="25670627"
+                 type="application/octet-stream"
+                 sparkle:edSignature="WgCQjJoJS3usjXmofsUlqO/fysUoVgNdIb5+PJjmZfXcTQ3Iz1w3Zp9ZAXt4m7ApuDU8vp3oT4U9260845bbBg==" />
+    </item>
+    <item>
       <title>0.32.1</title>
       <pubDate>Mon, 05 Oct 2026 00:29:15 +0900</pubDate>
       <sparkle:version>67</sparkle:version>
