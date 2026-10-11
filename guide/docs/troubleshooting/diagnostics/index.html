@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">진단 정보 보내기 | Sogon</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="robots" content="noindex, nofollow"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://sogon.dev/guide/docs/troubleshooting/diagnostics/"><meta data-rh="true" property="og:locale" content="ko_KR"><meta data-rh="true" property="og:locale:alternate" content="en_US"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="진단 정보 보내기 | Sogon"><meta data-rh="true" name="description" content="디버그 로그를 켜고 문제를 재현한 뒤 진단 파일 하나로 묶어 보냅니다."><meta data-rh="true" property="og:description" content="디버그 로그를 켜고 문제를 재현한 뒤 진단 파일 하나로 묶어 보냅니다."><link data-rh="true" rel="icon" href="/guide/img/icon.png"><link data-rh="true" rel="canonical" href="https://sogon.dev/guide/docs/troubleshooting/diagnostics/"><link data-rh="true" rel="alternate" href="https://sogon.dev/guide/docs/troubleshooting/diagnostics/" hreflang="ko-KR"><link data-rh="true" rel="alternate" href="https://sogon.dev/guide/en/docs/troubleshooting/diagnostics/" hreflang="en-US"><link data-rh="true" rel="alternate" href="https://sogon.dev/guide/docs/troubleshooting/diagnostics/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"문제 해결","item":"https://sogon.dev/guide/docs/troubleshooting/"},{"@type":"ListItem","position":2,"name":"진단 정보 보내기","item":"https://sogon.dev/guide/docs/troubleshooting/diagnostics"}]}</script><link rel="stylesheet" href="/guide/assets/css/styles.94e14ded.css">
-<script src="/guide/assets/js/runtime~main.73ed4949.js" defer="defer"></script>
+<script src="/guide/assets/js/runtime~main.5380c2bb.js" defer="defer"></script>
 <script src="/guide/assets/js/main.6efd44c8.js" defer="defer"></script>
 </head>
 <body>
@@ -17,9 +17,11 @@
 <li class="">설정 → 일반 → 진단에서 <code>디버그 로그 기록</code>을 켭니다.</li>
 <li class="">문제가 생긴 동작을 한 번 더 합니다.</li>
 <li class="">같은 섹션의 <code>진단 정보 내보내기</code>를 누릅니다.</li>
-<li class="">데스크톱에 <code>Sogon-진단-&lt;날짜&gt;-&lt;시각&gt;.txt</code>가 생깁니다. 이 파일을 보냅니다.</li>
+<li class="">데스크톱에 <code>Sogon-진단-&lt;날짜&gt;-&lt;시각&gt;.txt</code>가 생깁니다.</li>
+<li class="">같은 섹션의 <code>문의 남기기</code>를 누릅니다. GitHub 이슈 작성 화면이 열리고 앱 판·macOS 판·권한 상태가 미리 채워져 있습니다. 4번 파일을 그 화면에 끌어다 놓습니다.</li>
 <li class="">다 끝났으면 <code>디버그 로그 기록</code>을 다시 끕니다.</li>
 </ol>
+<p>이슈와 첨부 파일은 공개됩니다. 올리기 전에 파일을 열어 보셔도 됩니다. 아래에 무엇이 담기고 무엇이 담기지 않는지 정리해 두었습니다.</p>
 <p>로그를 켜기 전에 일어난 일은 남아 있지 않습니다. 켠 뒤에 재현해야 합니다.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="파일에-담기는-것">파일에 담기는 것<a href="#파일에-담기는-것" class="hash-link" aria-label="파일에 담기는 것에 대한 직접 링크" title="파일에 담기는 것에 대한 직접 링크" translate="no">​</a></h2>
 <table><thead><tr><th>담기는 것</th><th>예</th></tr></thead><tbody><tr><td>환경</td><td>앱 버전, macOS 버전, 손쉬운 사용 신뢰 여부, 이벤트 탭 실행 여부, Secure Event Input 상태</td></tr><tr><td>설정 요약</td><td>단축키, 녹음 모드, STT 프로바이더, 오버레이 표시</td></tr><tr><td>최근 로그</td><td>단축키 발동, 권한 상태, 전사·교정 단계, 삽입 결과, 복원 실패 사유와 글자 수</td></tr></tbody></table>
