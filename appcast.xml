@@ -15,6 +15,59 @@
     <description>Sogon 업데이트 피드</description>
     <language>ko</language>
     <item>
+      <title>0.34.2</title>
+      <pubDate>Wed, 14 Oct 2026 00:07:35 +0900</pubDate>
+      <sparkle:version>71</sparkle:version>
+      <sparkle:shortVersionString>0.34.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <sparkle:fullReleaseNotesLink>https://github.com/ddiiwoong/sogon-site/releases/tag/v0.34.2</sparkle:fullReleaseNotesLink>
+      <description><![CDATA[
+<style>
+body { margin: 0; padding: 0; line-height: 1.55; }
+h1, h2, h3 { line-height: 1.3; margin: 1.1em 0 0.45em; }
+h1 { font-size: 1.35em; }
+h2 { font-size: 1.15em; }
+h3 { font-size: 1.02em; }
+h2:first-child, h3:first-child, p:first-child { margin-top: 0; }
+p { margin: 0.55em 0; }
+ul { margin: 0.5em 0; padding-left: 1.3em; }
+li { margin: 0.25em 0; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: 0.92em; padding: 0.1em 0.3em; border-radius: 3px; }
+pre { font-family: ui-monospace, Menlo, monospace; font-size: 0.92em; padding: 0.6em 0.8em; border-radius: 4px; overflow-x: auto; }
+pre code { padding: 0; background: none; }
+blockquote { margin: 0.6em 0; padding: 0.1em 0 0.1em 0.8em; border-left: 3px solid currentColor; }
+table { border-collapse: collapse; margin: 0.7em 0; width: 100%; }
+th, td { text-align: left; padding: 0.35em 0.6em; border-bottom: 1px solid currentColor; vertical-align: top; }
+th { font-weight: 600; }
+hr { border: 0; border-top: 1px solid currentColor; margin: 1.2em 0; }
+code, pre { background: rgba(127, 127, 127, 0.18); }
+@media (prefers-color-scheme: dark) {
+  html { color-scheme: dark; color: #ffffff; }
+  a { color: #419CFF; }
+}
+@supports (color: color-mix(in srgb, currentColor 20%, transparent)) {
+  th, td, hr { border-color: color-mix(in srgb, currentColor 22%, transparent); }
+  blockquote { border-left-color: color-mix(in srgb, currentColor 35%, transparent); }
+}
+</style>
+<h2>한글 입력 상태에서도 ⌘C·⌘V·⌘X가 됩니다</h2>
+<p>한글로 입력하는 중에는 앱 안의 입력창에서 복사(⌘C)·붙여넣기(⌘V)·잘라내기(⌘X) 단축키가 먹지 않았습니다. 마우스 오른쪽 버튼 메뉴로는 됐고, 입력 소스를 영문으로 바꾸면 단축키도 됐습니다.</p>
+<p>한글 입력에서는 ⌘와 함께 누른 키의 글자가 영문이 아니라 자모로 전달됩니다. 한글 두벌식에서 ⌘C는 <code>ㅊ</code>, ⌘V는 <code>ㅍ</code>, ⌘Z는 <code>ㅋ</code>로 왔습니다. 앱이 그 글자를 <code>c</code>·<code>v</code>와 견줘 단축키를 알아보던 탓에 한글 상태에서는 어느 단축키도 알아보지 못했습니다. 이제 글자가 아니라 <strong>눌린 키</strong>로 알아봅니다.</p>
+<ul><li>대상은 ⌘C · ⌘V · ⌘X · ⌘A(모두 선택) · ⌘Z(실행 취소)이고, 앱 안의 모든 입력창에 적용됩니다.</li><li>영문 입력과 Dvorak·Colemak·AZERTY 같은 배열의 동작은 달라지지 않습니다.</li><li>한글 두벌식에서 ⌘C·⌘V·⌘Z가 이 처리를 거쳐 동작하는 것을 확인했습니다. ⌘X와 ⌘A도 같은 처리를 거칩니다.</li></ul>
+<h2>내보낸 파일 이름의 시각이 이 Mac의 시간대입니다</h2>
+<p>기록 탭에서 <code>.txt</code>·<code>.md</code>로 내보낼 때 저장 창에 채워지는 파일 이름의 시각이 UTC였습니다. 한국의 Mac에서는 기록 목록에 보이는 시작 시각보다 9시간 이르게 나왔습니다 — 오후 6시 19분에 시작한 회의가 <code>091919</code>로 적혔습니다.</p>
+<p>이제 이 Mac의 시간대로 나옵니다. <code>sogon-minutes-20261005-181919-54dfba45.txt</code>처럼 기록 목록의 시작 시각과 같고, 이름의 형식은 그대로입니다.</p>
+<h2>회의록 기록의 전사록·화자 내보내기가 빈 파일이었습니다</h2>
+<p>기록 하나는 회의록 · 연속 전사록 · 화자 구분을 각자 탭에서 보여 주는데, 내보내기는 셋 모두를 그 기록을 녹음할 때 고른 종류(기본은 회의록)로 저장했습니다. 그래서 회의록으로 녹음한 기록의 <code>연속 전사록 산출물</code> 탭이나 <code>화자</code> 탭을 내보내면 <code>요약</code>·<code>주요 논의</code>·<code>결정 사항</code>·<code>액션 아이템</code> 네 구획이 전부 <code>내용 없음</code>인 파일이 나왔습니다. 반대로 전사록으로 녹음한 기록의 회의록을 <code>.txt</code>로 내보내면 <code>##</code>·<code>-</code> 표시가 그대로 남았습니다.</p>
+<p>이제 <strong>내보내는 내용</strong>에 맞는 방식으로 저장합니다. 기록에 저장된 내용은 바뀐 적이 없고 내보낸 파일만 비었던 것이라, 다시 내보내면 됩니다.</p>
+<ul><li>회의록은 회의록 형식으로, 연속 전사록과 화자 구분은 전사록 형식으로 저장합니다.</li><li><strong>화자 구분 파일은 이름이 <code>sogon-speakers-…</code>로 따로 붙습니다.</strong> 전에는 회의록으로 녹음한 기록이면 회의록과, 전사록으로 녹음한 기록이면 전사록과 이름이 같았습니다. 같은 폴더에 둘을 내보내면 덮어쓰기 확인이 뜨고, 그대로 저장하면 앞 파일이 사라졌습니다.</li></ul>
+]]></description>
+      <enclosure url="https://github.com/ddiiwoong/sogon-site/releases/download/v0.34.2/Sogon.dmg"
+                 length="25660807"
+                 type="application/octet-stream"
+                 sparkle:edSignature="5LLMPYgRFWr1B5Po+o1HkmC8XrllCREhPRLBuITW6gva1HMxHBHc8SCD1/ETYK9uDegBHvOZqiiGlfxgpyf+CQ==" />
+    </item>
+    <item>
       <title>0.34.1</title>
       <pubDate>Sun, 11 Oct 2026 19:18:03 +0900</pubDate>
       <sparkle:version>70</sparkle:version>
