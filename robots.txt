@@ -1,0 +1,13 @@
+# sogon.dev — 전부 색인을 허용한다 (2026-10-15 결정; 근거는 저장소의 site/README.md "검색 노출").
+#
+# Cloudflare 중계 뒤라서 라이브 응답에는 Cloudflare의 관리형 문구(content signals)가 이 파일 **앞에**
+# 붙는다. 라이브 robots.txt가 이 파일과 바이트 단위로 다른 것은 정상이다 — 게시 실패가 아니다.
+#
+# Sitemap 줄은 tests/release/test_site_seo.py가 게시 산출물과 맞춰 본다.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://sogon.dev/sitemap.xml
+Sitemap: https://sogon.dev/guide/sitemap.xml
+Sitemap: https://sogon.dev/guide/en/sitemap.xml
