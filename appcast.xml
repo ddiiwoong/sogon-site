@@ -15,6 +15,69 @@
     <description>Sogon 업데이트 피드</description>
     <language>ko</language>
     <item>
+      <title>0.34.7</title>
+      <pubDate>Sun, 08 Nov 2026 01:53:05 +0900</pubDate>
+      <sparkle:version>76</sparkle:version>
+      <sparkle:shortVersionString>0.34.7</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <sparkle:fullReleaseNotesLink>https://github.com/ddiiwoong/sogon-site/releases/tag/v0.34.7</sparkle:fullReleaseNotesLink>
+      <description><![CDATA[
+<style>
+body { margin: 0; padding: 0; line-height: 1.55; }
+h1, h2, h3 { line-height: 1.3; margin: 1.1em 0 0.45em; }
+h1 { font-size: 1.35em; }
+h2 { font-size: 1.15em; }
+h3 { font-size: 1.02em; }
+h2:first-child, h3:first-child, p:first-child { margin-top: 0; }
+p { margin: 0.55em 0; }
+ul { margin: 0.5em 0; padding-left: 1.3em; }
+li { margin: 0.25em 0; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: 0.92em; padding: 0.1em 0.3em; border-radius: 3px; }
+pre { font-family: ui-monospace, Menlo, monospace; font-size: 0.92em; padding: 0.6em 0.8em; border-radius: 4px; overflow-x: auto; }
+pre code { padding: 0; background: none; }
+blockquote { margin: 0.6em 0; padding: 0.1em 0 0.1em 0.8em; border-left: 3px solid currentColor; }
+table { border-collapse: collapse; margin: 0.7em 0; width: 100%; }
+th, td { text-align: left; padding: 0.35em 0.6em; border-bottom: 1px solid currentColor; vertical-align: top; }
+th { font-weight: 600; }
+hr { border: 0; border-top: 1px solid currentColor; margin: 1.2em 0; }
+code, pre { background: rgba(127, 127, 127, 0.18); }
+@media (prefers-color-scheme: dark) {
+  html { color-scheme: dark; color: #ffffff; }
+  a { color: #419CFF; }
+}
+@supports (color: color-mix(in srgb, currentColor 20%, transparent)) {
+  th, td, hr { border-color: color-mix(in srgb, currentColor 22%, transparent); }
+  blockquote { border-left-color: color-mix(in srgb, currentColor 35%, transparent); }
+}
+</style>
+<h2>Apple 내장 음성 인식을 엔진으로 고를 수 있습니다 (설정 → STT, macOS 26 이상)</h2>
+<p>음성 인식 엔진에 <code>Apple (macOS 내장)</code>이 생겼습니다. macOS에 들어 있는 음성 인식(<code>SpeechAnalyzer</code>)을 쓰므로 모델 파일을 내려받지 않습니다. 언어 자산은 처음 쓸 때 OS가 내려받아 관리하고, 전사는 Mac 안에서 끝납니다.</p>
+<p>받아쓰기, 회의 녹음, 다시 전사, 실시간 미리보기 모두 이 엔진으로 돌아갑니다. 메뉴 막대의 빠른 제어에서도 고를 수 있습니다. macOS 26보다 낮은 판에서는 목록에 나오지 않습니다.</p>
+<p>macOS 27에서 공개 한국어 낭독 데이터 120문장(18.4분, 화자 10명)과 실제 강의 녹음 145초로 기본 엔진인 WhisperKit Large v3 Turbo와 견줬습니다. 숫자는 숫자 표기가 없는 문장의 글자 오류율입니다.</p>
+<table>
+<thead><tr><th>조건</th><th>Apple</th><th>WhisperKit Large v3 Turbo</th></tr></thead>
+<tbody>
+<tr><td>깨끗한 낭독</td><td>3.3%</td><td>3.0%</td></tr>
+<tr><td>낭독 + 웅성거림 잡음</td><td>6.0%</td><td>6.4%</td></tr>
+<tr><td>30% 넘게 틀린 문장(잡음)</td><td>120개 중 6개</td><td>120개 중 10개</td></tr>
+<tr><td>18.4분 처리 시간</td><td>14초</td><td>240초</td></tr>
+</tbody></table>
+<ul><li>깨끗한 음성에서는 WhisperKit이 조금 더 정확하고 Apple은 17배 빠릅니다.</li><li>잡음이 있거나 긴 실제 녹음에서는 Apple이 덜 무너졌습니다. WhisperKit Large v3 Turbo는 강의 녹음의 한 구간에서 없는 문장을 지어내 되풀이했고, Apple은 <code>범용</code>을 <code>법용</code>으로 적는 식으로 낱말 단위로 틀렸습니다.</li><li>가장 정확한 것은 여전히 WhisperKit Large v3입니다.</li></ul>
+<p>기본 엔진은 바꾸지 않았습니다. 지금 쓰던 엔진이 그대로 쓰입니다.</p>
+<h3>알아 둘 점</h3>
+<ul><li><strong><code>자동 감지</code>는 한국어로 듣습니다.</strong> Apple 엔진은 언어를 스스로 감지하지 않습니다. 다른 언어를 받아쓰려면 설정 → 일반 → 입력에서 전사 언어를 그 언어로 고르세요.</li><li><strong>영어 용어를 한글로 적습니다.</strong> <code>isolation</code>이 <code>아이솔레이션</code>이 되는 식입니다. LLM 교정과 단어사전이 표기를 바로잡습니다.</li><li><strong>쉼 줄바꿈은 WhisperKit에서만 됩니다.</strong> 설정 → 일반 → 받아쓰기 서식의 <code>말 사이 쉼에서 줄바꿈</code>은 Apple 엔진에서는 적용되지 않습니다.</li></ul>
+<h2>실시간 미리보기가 Apple 엔진에서도 됩니다 (설정 → STT → 실시간 미리보기)</h2>
+<p>전사록 세션에서 확정 전 텍스트를 회색으로 먼저 보여 주는 실시간 미리보기가 WhisperKit뿐 아니라 Apple 엔진에서도 동작합니다. 공개 낭독 데이터 20문장을 실제 속도로 흘려 넣었을 때 첫 글자가 나오기까지 중앙값 2초가 걸렸습니다.</p>
+<p>미리보기 줄은 지금처럼 녹음 쪽 전사가 확정되면 확정된 글로 바뀝니다. 마이크와 시스템 오디오를 함께 녹음하면 트랙마다 미리보기가 따로 돌아 CPU를 더 씁니다.</p>
+<h2>그 밖에</h2>
+<ul><li>설정 → STT의 경고가 Apple 엔진을 "실시간 미리보기를 지원하지 않는 엔진"으로 부르지 않습니다.</li></ul>
+]]></description>
+      <enclosure url="https://github.com/ddiiwoong/sogon-site/releases/download/v0.34.7/Sogon.dmg"
+                 length="25838046"
+                 type="application/octet-stream"
+                 sparkle:edSignature="jxDovRhPdNSadbxhzNOBaJuEaTAW5/UwlTsg4k+0XNVBrdSKNDxRSNGtkwHHBCP1Pl11CfwPf685/3UOVbTOCA==" />
+    </item>
+    <item>
       <title>0.34.6</title>
       <pubDate>Sat, 07 Nov 2026 02:11:02 +0900</pubDate>
       <sparkle:version>75</sparkle:version>
