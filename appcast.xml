@@ -15,6 +15,54 @@
     <description>Sogon 업데이트 피드</description>
     <language>ko</language>
     <item>
+      <title>0.34.8</title>
+      <pubDate>Thu, 19 Nov 2026 23:51:48 +0900</pubDate>
+      <sparkle:version>77</sparkle:version>
+      <sparkle:shortVersionString>0.34.8</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <sparkle:fullReleaseNotesLink>https://github.com/ddiiwoong/sogon-site/releases/tag/v0.34.8</sparkle:fullReleaseNotesLink>
+      <description><![CDATA[
+<style>
+body { margin: 0; padding: 0; line-height: 1.55; }
+h1, h2, h3 { line-height: 1.3; margin: 1.1em 0 0.45em; }
+h1 { font-size: 1.35em; }
+h2 { font-size: 1.15em; }
+h3 { font-size: 1.02em; }
+h2:first-child, h3:first-child, p:first-child { margin-top: 0; }
+p { margin: 0.55em 0; }
+ul { margin: 0.5em 0; padding-left: 1.3em; }
+li { margin: 0.25em 0; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: 0.92em; padding: 0.1em 0.3em; border-radius: 3px; }
+pre { font-family: ui-monospace, Menlo, monospace; font-size: 0.92em; padding: 0.6em 0.8em; border-radius: 4px; overflow-x: auto; }
+pre code { padding: 0; background: none; }
+blockquote { margin: 0.6em 0; padding: 0.1em 0 0.1em 0.8em; border-left: 3px solid currentColor; }
+table { border-collapse: collapse; margin: 0.7em 0; width: 100%; }
+th, td { text-align: left; padding: 0.35em 0.6em; border-bottom: 1px solid currentColor; vertical-align: top; }
+th { font-weight: 600; }
+hr { border: 0; border-top: 1px solid currentColor; margin: 1.2em 0; }
+code, pre { background: rgba(127, 127, 127, 0.18); }
+@media (prefers-color-scheme: dark) {
+  html { color-scheme: dark; color: #ffffff; }
+  a { color: #419CFF; }
+}
+@supports (color: color-mix(in srgb, currentColor 20%, transparent)) {
+  th, td, hr { border-color: color-mix(in srgb, currentColor 22%, transparent); }
+  blockquote { border-left-color: color-mix(in srgb, currentColor 35%, transparent); }
+}
+</style>
+<h2>회의 원문을 바로 저장하거나 메모로 보낼 수 있습니다 (설정 → 기록 → 회의)</h2>
+<p>회의 기록을 펼친 뒤 <code>원문</code> 탭의 <code>원문 전사</code> 줄에 <code>txt로 저장</code>, <code>md로 저장</code>, <code>메모로 보내기</code>가 생겼습니다. 마이크와 시스템 오디오를 시간순으로 합치고 <code>[마이크]</code>·<code>[시스템 오디오]</code> 표시를 붙인 원문을 그대로 내보냅니다. 회의록이나 전사록 문서를 만들지 않아도 되고, LLM을 거치지 않습니다.</p>
+<ul><li><code>txt로 저장</code>은 원문을 글자 그대로 씁니다.</li><li><code>md로 저장</code>은 연속 전사록과 같은 방식으로 문단과 줄바꿈을 남깁니다.</li><li>파일 이름은 <code>sogon-transcript-&lt;날짜-시각&gt;-&lt;세션 ID 끝 8자&gt;</code>로 채워져, 같은 세션의 회의록·전사록 파일과 겹치지 않습니다.</li><li><code>메모로 보내기</code>는 <code>원문 전사 · &lt;회의 시작 시각&gt;</code> 제목으로 새 노트를 만듭니다.</li></ul>
+<h2>LLM 모델 목록을 최신 공식 문서에 맞췄습니다 (설정 → LLM)</h2>
+<ul><li><strong>Anthropic Claude</strong>: <code>Claude Fable 5.1</code> 자리에 <code>Claude Fable 5.2</code>가 들어갔습니다. 공식 문서 기준으로 지연은 Opus 5.5와 같은 중간이고, 5.1보다 값이 쌉니다. Fable 5.1이나 Fable 5를 골라 두었다면 Fable 5.2로 자동 이전됩니다.</li><li><strong>Google Gemini</strong>: Gemini 4 세대의 일상 작업용 모델 <code>Gemini 4 Hydrogen</code>을 더했습니다. 사고(thinking)를 끌 수 없는 모델입니다. 기본값은 그대로 <code>3.5 Flash-Lite</code>입니다.</li><li><strong>OpenAI (Codex)</strong>: Codex 모델 문서에 새로 오른 <code>GPT-6.2 Sol</code>과 <code>GPT-6.2 Astra</code>를 더했습니다. 기존 네 모델도 그대로 고를 수 있고, 기본값은 <code>GPT-6 Luna</code>입니다. 6.2 두 모델은 지원하는 플랜에서만 열립니다.</li></ul>
+<p>Amazon Bedrock과 Groq의 목록은 바뀌지 않았습니다.</p>
+]]></description>
+      <enclosure url="https://github.com/ddiiwoong/sogon-site/releases/download/v0.34.8/Sogon.dmg"
+                 length="25841500"
+                 type="application/octet-stream"
+                 sparkle:edSignature="nitBQjQz9QvhiC6Wff0WanXY+Eu4XtvuDOZWiTspx7rwUGUmUdGK7uutGKmxJyc+kHyxR+mlQPKHCOvwZwbGCg==" />
+    </item>
+    <item>
       <title>0.34.7</title>
       <pubDate>Sun, 08 Nov 2026 01:53:05 +0900</pubDate>
       <sparkle:version>76</sparkle:version>
