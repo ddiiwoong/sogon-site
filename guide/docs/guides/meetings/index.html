@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">회의 녹음 | Sogon</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://sogon.dev/og.png"><meta data-rh="true" name="twitter:image" content="https://sogon.dev/og.png"><meta data-rh="true" property="og:url" content="https://sogon.dev/guide/docs/guides/meetings/"><meta data-rh="true" property="og:locale" content="ko_KR"><meta data-rh="true" property="og:locale:alternate" content="en_US"><meta data-rh="true" name="docusaurus_locale" content="ko"><meta data-rh="true" name="docsearch:language" content="ko"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="회의 녹음 | Sogon"><meta data-rh="true" name="description" content="회의를 녹음하고, 끝난 뒤 전사해 회의록이나 전사록을 만듭니다."><meta data-rh="true" property="og:description" content="회의를 녹음하고, 끝난 뒤 전사해 회의록이나 전사록을 만듭니다."><link data-rh="true" rel="icon" href="/guide/img/icon.png"><link data-rh="true" rel="canonical" href="https://sogon.dev/guide/docs/guides/meetings/"><link data-rh="true" rel="alternate" href="https://sogon.dev/guide/docs/guides/meetings/" hreflang="ko-KR"><link data-rh="true" rel="alternate" href="https://sogon.dev/guide/en/docs/guides/meetings/" hreflang="en-US"><link data-rh="true" rel="alternate" href="https://sogon.dev/guide/docs/guides/meetings/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"회의 녹음","item":"https://sogon.dev/guide/docs/guides/meetings"}]}</script><link rel="stylesheet" href="/guide/assets/css/styles.94e14ded.css">
-<script src="/guide/assets/js/runtime~main.d1e33530.js" defer="defer"></script>
+<script src="/guide/assets/js/runtime~main.db81d8d1.js" defer="defer"></script>
 <script src="/guide/assets/js/main.dd43002d.js" defer="defer"></script>
 </head>
 <body>
@@ -36,6 +36,7 @@
 <li class=""><code>회의록 문서 만들기</code> 또는 <code>전사록 문서 만들기</code>를 누릅니다.</li>
 <li class=""><code>txt로 내보내기</code>, <code>md로 내보내기</code>, <code>메모로 보내기</code>로 결과를 가져갑니다.</li>
 </ol>
+<p><code>원문</code> 탭의 글은 문서를 만들지 않아도 바로 가져갈 수 있습니다. <code>원문 전사</code> 줄의 <code>txt로 저장</code>, <code>md로 저장</code>, <code>메모로 보내기</code>가 마이크와 시스템 오디오를 시간순으로 합친 원문을 그대로 내보냅니다. LLM을 거치지 않습니다.</p>
 <table><thead><tr><th>산출물</th><th>내용</th><th>LLM 필요</th></tr></thead><tbody><tr><td>원문</td><td>전사한 글을 시간순으로 이은 것</td><td>아니요</td></tr><tr><td>전사록</td><td>원문을 쉼 기준으로 문단을 나눈 문서. <code>전사록 문장 다듬기 (LLM)</code>을 켜면 문장과 구두점도 다듬습니다.</td><td>선택</td></tr><tr><td>회의록</td><td>요약, 결정 사항, 액션 아이템, 기타 네 부분으로 정리한 문서</td><td>예</td></tr></tbody></table>
 <p>한 세션에서 회의록과 전사록을 둘 다 만들 수 있습니다. 전사를 다시 할 필요가 없습니다.</p>
 <p>전사문이 200자보다 짧으면 회의록 대신 전사록을 권합니다. <code>그대로 회의록 만들기</code>로 계속할 수 있습니다.</p>
@@ -53,7 +54,7 @@
 <ul>
 <li class="">전사는 약 2~3분 단위로 확정됩니다. 첫 결과는 최소 2분 뒤에 보입니다. 실시간 자막이 아닙니다.</li>
 <li class="">전사록 세션에서는 <code>세션 전사 보기</code>로 확정된 전사를 보고, 창으로 띄워 회의 화면 위에 둘 수 있습니다. 이 창은 키보드 포커스를 가져가지 않습니다.</li>
-<li class="">설정 → STT → <code>실시간 미리보기</code>를 켜면 확정 전 텍스트가 2~5초 안에 회색으로 먼저 보입니다. WhisperKit 전용이고 CPU를 더 씁니다. 기본값은 꺼짐입니다.</li>
+<li class="">설정 → STT → <code>실시간 미리보기</code>를 켜면 확정 전 텍스트가 2~5초 안에 회색으로 먼저 보입니다. 전사 엔진이 WhisperKit이나 Apple일 때 되고, CPU를 더 씁니다. 기본값은 꺼짐입니다.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="오디오-관리">오디오 관리<a href="#오디오-관리" class="hash-link" aria-label="오디오 관리에 대한 직접 링크" title="오디오 관리에 대한 직접 링크" translate="no">​</a></h2>
 <ul>

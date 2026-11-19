@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.2">
 <title data-rh="true">Meeting recording | Sogon</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://sogon.dev/og-en.png"><meta data-rh="true" name="twitter:image" content="https://sogon.dev/og-en.png"><meta data-rh="true" property="og:url" content="https://sogon.dev/guide/en/docs/guides/meetings/"><meta data-rh="true" property="og:locale" content="en_US"><meta data-rh="true" property="og:locale:alternate" content="ko_KR"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Meeting recording | Sogon"><meta data-rh="true" name="description" content="Record a meeting, then transcribe it and create minutes or a verbatim transcript."><meta data-rh="true" property="og:description" content="Record a meeting, then transcribe it and create minutes or a verbatim transcript."><link data-rh="true" rel="icon" href="/guide/en/img/icon.png"><link data-rh="true" rel="canonical" href="https://sogon.dev/guide/en/docs/guides/meetings/"><link data-rh="true" rel="alternate" href="https://sogon.dev/guide/docs/guides/meetings/" hreflang="ko-KR"><link data-rh="true" rel="alternate" href="https://sogon.dev/guide/en/docs/guides/meetings/" hreflang="en-US"><link data-rh="true" rel="alternate" href="https://sogon.dev/guide/docs/guides/meetings/" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Meeting recording","item":"https://sogon.dev/guide/en/docs/guides/meetings"}]}</script><link rel="stylesheet" href="/guide/en/assets/css/styles.94e14ded.css">
-<script src="/guide/en/assets/js/runtime~main.6dd8fc81.js" defer="defer"></script>
+<script src="/guide/en/assets/js/runtime~main.226fd5f5.js" defer="defer"></script>
 <script src="/guide/en/assets/js/main.7b670b34.js" defer="defer"></script>
 </head>
 <body>
@@ -36,6 +36,7 @@
 <li class="">Press <code>Create minutes document</code> or <code>Create verbatim document</code>.</li>
 <li class="">Take the result with <code>Export .txt</code>, <code>Export .md</code>, or <code>Send to Notes</code>.</li>
 </ol>
+<p>You can take the <code>Transcript</code> tab&#x27;s text without creating a document. <code>Save .txt</code>, <code>Save .md</code>, and <code>Send to Notes</code> on the <code>Raw transcript</code> row export the transcript as it is, with the microphone and system audio merged in time order. It does not go through an LLM.</p>
 <table><thead><tr><th>Output</th><th>Contents</th><th>Needs an LLM</th></tr></thead><tbody><tr><td>Transcript</td><td>The transcription in time order</td><td>No</td></tr><tr><td>Verbatim</td><td>The transcript split into paragraphs at pauses. With <code>Clean up transcript (LLM)</code> on, sentences and punctuation are tidied too.</td><td>Optional</td></tr><tr><td>Minutes</td><td>A document with four sections: summary, decisions, action items, and other</td><td>Yes</td></tr></tbody></table>
 <p>One session can have both minutes and a verbatim document. You don&#x27;t need to transcribe again.</p>
 <p>If the transcription is shorter than 200 characters, Sogon suggests a verbatim transcript instead of minutes. You can continue with <code>Make minutes anyway</code>.</p>
@@ -53,7 +54,7 @@
 <ul>
 <li class="">Transcription is finalized in chunks of about 2–3 minutes. The first result appears after at least 2 minutes. It&#x27;s not live captioning.</li>
 <li class="">In a verbatim session, <code>Show session transcript</code> shows the finalized text, and you can open it in a window that floats over your meeting. That window never takes keyboard focus.</li>
-<li class="">Turn on Settings → STT → <code>Live preview</code> to see unconfirmed text in gray within 2–5 seconds. It works only with WhisperKit and uses more CPU. It&#x27;s off by default.</li>
+<li class="">Turn on Settings → STT → <code>Live preview</code> to see unconfirmed text in gray within 2–5 seconds. It works when the transcription engine is WhisperKit or Apple, and uses more CPU. It&#x27;s off by default.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="managing-audio">Managing audio<a href="#managing-audio" class="hash-link" aria-label="Direct link to Managing audio" title="Direct link to Managing audio" translate="no">​</a></h2>
 <ul>
