@@ -15,6 +15,58 @@
     <description>Sogon 업데이트 피드</description>
     <language>ko</language>
     <item>
+      <title>0.34.10</title>
+      <pubDate>Sun, 22 Nov 2026 19:57:08 +0900</pubDate>
+      <sparkle:version>79</sparkle:version>
+      <sparkle:shortVersionString>0.34.10</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <sparkle:fullReleaseNotesLink>https://github.com/ddiiwoong/sogon-site/releases/tag/v0.34.10</sparkle:fullReleaseNotesLink>
+      <description><![CDATA[
+<style>
+body { margin: 0; padding: 0; line-height: 1.55; }
+h1, h2, h3 { line-height: 1.3; margin: 1.1em 0 0.45em; }
+h1 { font-size: 1.35em; }
+h2 { font-size: 1.15em; }
+h3 { font-size: 1.02em; }
+h2:first-child, h3:first-child, p:first-child { margin-top: 0; }
+p { margin: 0.55em 0; }
+ul { margin: 0.5em 0; padding-left: 1.3em; }
+li { margin: 0.25em 0; }
+code { font-family: ui-monospace, Menlo, monospace; font-size: 0.92em; padding: 0.1em 0.3em; border-radius: 3px; }
+pre { font-family: ui-monospace, Menlo, monospace; font-size: 0.92em; padding: 0.6em 0.8em; border-radius: 4px; overflow-x: auto; }
+pre code { padding: 0; background: none; }
+blockquote { margin: 0.6em 0; padding: 0.1em 0 0.1em 0.8em; border-left: 3px solid currentColor; }
+table { border-collapse: collapse; margin: 0.7em 0; width: 100%; }
+th, td { text-align: left; padding: 0.35em 0.6em; border-bottom: 1px solid currentColor; vertical-align: top; }
+th { font-weight: 600; }
+hr { border: 0; border-top: 1px solid currentColor; margin: 1.2em 0; }
+code, pre { background: rgba(127, 127, 127, 0.18); }
+@media (prefers-color-scheme: dark) {
+  html { color-scheme: dark; color: #ffffff; }
+  a { color: #419CFF; }
+}
+@supports (color: color-mix(in srgb, currentColor 20%, transparent)) {
+  th, td, hr { border-color: color-mix(in srgb, currentColor 22%, transparent); }
+  blockquote { border-left-color: color-mix(in srgb, currentColor 35%, transparent); }
+}
+</style>
+<h2>MLX Audio 엔진의 모델을 고를 수 있습니다 (설정 → STT)</h2>
+<p>음성 인식 엔진이 MLX Audio일 때 <code>MLX Audio 모델</code>이 생겼습니다. 지금까지는 Qwen3-ASR 1.7B로 고정이었습니다.</p>
+<ul><li><code>Qwen3-ASR 1.7B</code>(약 2.5GB): 기본값입니다. 쓰던 설정은 그대로입니다.</li><li><code>Qwen3-ASR 0.6B</code>(약 1.0GB): 더 작고 빠르지만 1.7B보다 낱말을 잘못 알아듣는 일이 늘어납니다. 메모리가 빠듯한 Mac에 맞습니다.</li></ul>
+<p>처음 고른 모델은 그때 내려받습니다. 자세한 내용은 사용 설명서의 <a href="https://sogon.dev/guide/docs/reference/stt-models/#mlx-audio-모델-고르기">STT 엔진·모델</a>에 있습니다.</p>
+<h2>Apple 음성 인식이 언어 자산이 없는 Mac에서 앱을 끝내지 않습니다</h2>
+<p>음성 인식 엔진을 Apple로 둔 채, 그 언어의 음성 인식 자산이 Mac에 없을 때 받아쓰기·파일 전사·실시간 미리보기를 시작하면 앱이 꺼졌습니다. 이제는 앱이 계속 돌고 "Apple 음성 인식 언어 자산이 이 Mac에 없습니다"라고 알립니다. 인터넷에 연결한 뒤 다시 시도하면 macOS가 자산을 내려받습니다.</p>
+<h2>필요한 명령줄 도구가 없으면 설치 방법을 그 자리에 보여 줍니다</h2>
+<p>AWS Transcribe, Bedrock의 AWS profile 방식, kiro-cli가 쓰는 도구가 Mac에 없으면 설정 화면의 그 자리에 다음이 나옵니다.</p>
+<ul><li>터미널에 붙여 넣을 설치 명령과 <code>복사</code> 단추. AWS CLI는 Homebrew가 있으면 <code>brew install awscli</code>이고, kiro-cli는 공식 설치 명령입니다.</li><li><code>설치 페이지 열기</code>와 <code>다시 확인</code>. 설치한 뒤 설정 창을 다시 열지 않아도 됩니다.</li><li>kiro-cli에 로그인되어 있지 않아 호출이 끝나면 <code>kiro-cli login</code>을 안내합니다.</li></ul>
+<p>소곤이 설치 명령을 직접 실행하지는 않습니다.</p>
+]]></description>
+      <enclosure url="https://github.com/ddiiwoong/sogon-site/releases/download/v0.34.10/Sogon.dmg"
+                 length="25970835"
+                 type="application/octet-stream"
+                 sparkle:edSignature="s40wVay7H8IQxgacAjpTdRPaeuTHZeymwvJntEVK/y5jV4B6U65okg5NB5gCNxuVjayrL9PPK4VSuAw1r9IdAA==" />
+    </item>
+    <item>
       <title>0.34.9</title>
       <pubDate>Sun, 22 Nov 2026 00:12:44 +0900</pubDate>
       <sparkle:version>78</sparkle:version>
